@@ -62,13 +62,13 @@ public static ArrayList<Integer> getpathBFS(int edges[][], int sv , int ev) {
 		boolean pathFound = false;
 		
 		while(!queue.isEmpty()) {
-			int vertex = queue.poll();
+			int currentVertex = queue.poll();
 			
 			for(int i = 0; i< edges.length ; i++) {
-				if(edges[vertex][i] == 1 && !visited[i]) {
+				if(edges[currentVertex][i] == 1 && !visited[i]) {
 					queue.add(i);
 					visited[i]=true;
-					map.put(i, vertex);
+					map.put(i, currentVertex);
 					
 					if(i == ev) {
 						//Path Found
@@ -82,11 +82,11 @@ public static ArrayList<Integer> getpathBFS(int edges[][], int sv , int ev) {
 			
 		}if(pathFound) {
 			ArrayList<Integer> path = new ArrayList<>();
-			int vertex = ev;
-			while(vertex != -1) {
-				path.add(vertex);
-				int parent = map.get(vertex);
-				vertex = parent ;	
+			int currentVertex = ev;
+			while(currentVertex != -1) {
+				path.add(currentVertex);
+				int parent = map.get(currentVertex);
+				currentVertex = parent ;	
 			}  return path;
 			
 		}else {
@@ -129,4 +129,5 @@ public static ArrayList<Integer> getpathBFS(int edges[][], int sv , int ev) {
 	}
 
 }
+
 
