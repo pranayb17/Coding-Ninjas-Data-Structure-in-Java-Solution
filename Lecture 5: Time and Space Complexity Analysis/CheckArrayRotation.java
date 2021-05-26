@@ -38,8 +38,8 @@ public class Solution {
      public static int arrayRotateCheck(int[] arr){
     	
 		if (arr.length == 0){
-           return 0;   
-        } 
+                return 0;   
+                } 
 		
 		int min = arr[0];
 		int minIndex = 0;
