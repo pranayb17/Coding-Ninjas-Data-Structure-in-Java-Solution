@@ -42,18 +42,18 @@ public class Solution {
     //Where 'n' is the size of Array/List
 
   public static int findDuplicate(int[] arr) {
-		int N=arr.length;
-		int sumofElements=0;
+		int N = arr.length;
+		int sumofElements = 0;
 		
 		for(int i=0;i<N;i++) {
-			sumofElements=sumofElements+arr[i];
+			sumofElements = sumofElements+arr[i];
 		}
 		
-		int Nminus2Naturalnumbers=((N-2)*(N-1))/2;
+		int Nminus2Naturalnumbers = ((N-2)*(N-1))/2;
 		
-		int Duplicateelement=sumofElements-Nminus2Naturalnumbers;
+		int DuplicateElement = sumofElements - Nminus2Naturalnumbers;
 		
-		return Duplicateelement;
+		return DuplicateElement;
 		
 		
 	}
