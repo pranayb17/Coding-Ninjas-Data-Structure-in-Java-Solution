@@ -42,27 +42,68 @@
 
 
 
-public class Solution {  
+
+public class Solution {
+    
+    
+    public static void reverse(int [] arr, int i, int j){
+        
+        int li = i;
+        int ri = j;
+        
+        while(li < ri){
+            int temp = arr[li];
+            arr[li] = arr[ri];
+            arr[ri] = temp;
+            
+            li++;
+            ri--;
+        }
+        
+    }
 
      public static void rotate(int[] arr, int d) {
          
-    	int len = arr.length;
-    	int temp[] = new int [d];
-    	
-    	for(int i = 0; i < d; i++) {
-    		temp[i] = arr[i];
-    	}
-    	
-    	for(int i = d; i<len; i++){
-            arr[i-d] = arr[i];
-        }
-        
-        int p = 0;
-        
-        for(int i = len-d; i < len; i++){
-            arr[i] = temp[p++];
+         if(arr.length == 0){
+             return ;
+         }
+         
+         if(d >= arr.length && arr.length != 0){
+            d = d % arr.length; 
+         }
+         
+         
+         
+         // if(d < 0){
+         //     d = d + arr.length;
+         // }
+         
+         //for left side Array rotation
+         
+         //part 1
+         reverse(arr, 0, arr.length-1);
+         
+         
+         //part 2
+         reverse(arr, 0, arr.length - d - 1);
+         
+         
+         //part 3
+         reverse(arr, arr.length - d, arr.length - 1);
+         
+         
+//          for right side Array rotation
+
+//          part 1
+//          reverse(arr, 0, arr.length - d - 1);
+         
+//          part 2
+//          reverse(arr, arr.length - d, arr.length - 1);
+         
+//          part 3
+//          reverse(arr, 0, arr.length-1);
+         
           
         }
     }
 
-}
