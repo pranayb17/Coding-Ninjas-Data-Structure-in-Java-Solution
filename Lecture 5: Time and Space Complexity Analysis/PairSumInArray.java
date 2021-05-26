@@ -62,11 +62,11 @@ public class Solution {
 			for(int j = i + 1 ; j < arr.length; j++) {
 				
 				if(arr[i] + arr[j] == num){
-                   count++; 
-                }  
-			}
-		}    
-		       return count;
-	}
+                                count++; 
+                                }  
+			   }
+		  }   return count;  
+		      
+	       }
     
-}
+          }
