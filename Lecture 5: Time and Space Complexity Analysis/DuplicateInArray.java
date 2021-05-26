@@ -45,7 +45,7 @@ public class Solution {
 		int N = arr.length;
 		int sumofElements = 0;
 		
-		for(int i=0;i<N;i++) {
+		for(int i = 0; i < N; i++) {
 			sumofElements = sumofElements+arr[i];
 		}
 		
