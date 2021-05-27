@@ -64,9 +64,9 @@ public class Solution {
 
 	public static int findNode(LinkedListNode<Integer> head, int n) {
     
-    if(head == null) {
+                 if(head == null) {
 			return -1;
-		}
+		  }
 		
 		int i = 0;
 		while(head != null) {
