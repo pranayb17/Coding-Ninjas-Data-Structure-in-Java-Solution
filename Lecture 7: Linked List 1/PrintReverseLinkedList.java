@@ -63,7 +63,7 @@ public class Solution {
     
         
         printReverse(root.next);
-        System.out.print(root.data+" ");
+        System.out.print(root.data + " ");
         
         
 	}
