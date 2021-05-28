@@ -55,7 +55,7 @@ public class Solution {
     
     public static LinkedListNode<Integer> midPoint(LinkedListNode<Integer> head) {
         
-        if(head == null || head.next==null) {
+        if(head == null || head.next == null) {
             return head;
         } 
             
