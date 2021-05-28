@@ -58,6 +58,14 @@
 
 */
 
+
+
+// Time Complexity : O(N + M)
+// Space Cpmplexity : O(1)
+
+// Where 'N' and 'M' are the sizes of the first and second Singly
+// Linked Lists respectively.
+
 public class Solution {
     
     public static LinkedListNode<Integer> mergeTwoSortedLinkedLists(LinkedListNode<Integer> head1, LinkedListNode<Integer> head2) {
