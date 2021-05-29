@@ -29,6 +29,12 @@
 // 1
 
 
+// Time Complexity : O(N)
+// Space Cpmplexity : O(N)
+
+// Where N is the number of brackets
+
+
 import java.util.Stack;
 
 public class Solution {
