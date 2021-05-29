@@ -2,19 +2,19 @@
 public class StackUsingArray {
 	
 	private int data[];
-	private int top; // is the index of topmost element of stack
+	private int top;                                              // is the index of topmost element of stack
 	
 	public StackUsingArray() {
-		data = new int[10];
+		data = new int[10];                                   // if size is not mentioned in constructor --default size is 10
 		top = -1;
 	}
 	
-	public StackUsingArray(int capacity) {
+	public StackUsingArray(int capacity) {                        // user input size for the stacks --in constructor
 		data = new int[capacity];
 		top = -1;
 	}
 	
-	public  boolean isEmpty(){
+	public  boolean isEmpty(){                                   // the function is belongs to different stacks i.e it is not static
 //		if(top == -1){
 //			return true;
 //		}else{
@@ -23,7 +23,7 @@ public class StackUsingArray {
 		return (top == -1);
 	}
 	
-	public int size(){
+	public int size(){                                          // no .of elements in stacks
 		return top + 1;	
 		}
 	
