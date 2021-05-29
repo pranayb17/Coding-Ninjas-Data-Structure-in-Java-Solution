@@ -33,6 +33,13 @@
 // 2 8 15 1 10
 
 
+
+//	Time Complexity : O(N^2)
+//	Space Cpmplexity : O(N)
+//
+//	Where N is the size of the input stack
+
+
 import java.util.Stack;
 
 public class Solution {
