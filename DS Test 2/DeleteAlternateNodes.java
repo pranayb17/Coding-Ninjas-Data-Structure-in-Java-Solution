@@ -54,6 +54,12 @@
     }
 */
 
+
+// Time Complexity : O(N)
+// Space Cpmplexity : O(1)
+
+// Where N is the size of the Linked List.
+
 public class Solution {
 
     public static void deleteAlternateNodes(Node<Integer> head) {
