@@ -36,17 +36,17 @@ public class Solution {
 	public static int numNodeGreater(TreeNode<Integer> root,int x){
 
 	    int count = 0;	
-      if (root == null) return 0;
+            if (root == null) return 0;
 			
-		else if (root.data  > x) {
-            count++;
-        }
+	     if (root.data  > x) {
+                 count++;
+             }
 			
 		
 		for (int i = 0; i < root.children.size(); i++) {
 			count = count + numNodeGreater(root.children.get(i), x);
 		}
-        return count;
+             return count;
 	}
 	
 }
