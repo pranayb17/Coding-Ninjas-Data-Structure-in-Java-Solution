@@ -4,7 +4,7 @@ public class Student {
 	private int roll_no;
 	double percent;
 	private static int countNumbers;
-	
+	//static, this keyword
 	public static int getCountStudents() {
 		return countNumbers;
 	}
