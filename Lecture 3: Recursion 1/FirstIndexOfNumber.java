@@ -22,33 +22,23 @@
 
 
 public class Solution {
-
-	//public static int firstIndex(int input[], int x) {
-		/* Your class should be named Solution
-		 * Don't write main().
-		 * Don't read input, it is passed as function argument.
-		 * Return output and don't print it.
-	 	 * Taking input and printing output is handled automatically.
-		*/
-		
+	
     private  static int firstIndex(int input[],int StartIndex,int x) {
         
-        if(input[StartIndex]==x)     	return StartIndex;
+        if(input[StartIndex] == x) {
+            return StartIndex;
+        }    
         
+        if(StartIndex >= input.length - 1  &&  input[StartIndex] != x ) {
+            return -1;
+        }
 		
-		if(StartIndex>=input.length-1 && input[StartIndex]!=x ) return -1;
-	
-		//	if (input[StartIndex]==x)   return StartIndex;
-			
-		//	else                        return -1;
-			
-		    int SmallAns=firstIndex(input,StartIndex+1,x);
-			return SmallAns;
-		}  
+	int SmallAns = firstIndex(input, StartIndex + 1, x);
+	   return SmallAns;
+	}  
 		
-	
-	public static int firstIndex(int input[] ,int x) {
-		return firstIndex(input,0,x);
-	}
+	public static int firstIndex(int input[] , int x) {
+	  return firstIndex(input, 0, x);
+	 }
 	
 }
