@@ -54,3 +54,41 @@ public class Solution {
 	}
 
 }
+
+//methode 2
+
+
+public class Solution {
+    
+    
+    public static int lastIndex(int input[], int x, int si) {
+        
+        if(si == input.length){
+            return -1;
+        }
+        
+        int k = lastIndex(input, x, si + 1); 
+        
+        if(k != -1){
+            return k;
+        }else{
+            
+            if(input[si] == x){
+                return si;
+            }else{
+                return -1;
+            }
+            
+        }
+		
+		
+	}
+    
+    public static int lastIndex(int input[], int x) {
+		
+		return lastIndex(input, x, 0);
+	}
+    
+    
+}
+
