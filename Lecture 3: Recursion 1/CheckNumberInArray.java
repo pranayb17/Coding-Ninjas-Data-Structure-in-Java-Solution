@@ -27,30 +27,25 @@
 public class Solution {
 	
 	public static boolean checkNumber(int input[], int x) {
-		/* Your class should be named Solution
-		 * Don't write main().
-		 * Don't read input, it is passed as function argument.
-		 * Return output and don't print it.
-	 	 * Taking input and printing output is handled automatically.
-		*/
-		int len=input.length;
 		
-		  if(input[0]==x)  return true;
+	    int len = input.length;
+		
+            if(input[0] == x)  {
+               return true;
+             }
 	         
-	        if( len==1) return false;
+	    if(len == 1) {
+               return false;
+             }
 	        
 		
-		int arr[]=new int[len-1];
-		for(int i=1;i<len;i++) {
-			arr[i-1]=input[i];
+		int arr[] = new int[len-1];
+		for(int i = 1; i < len; i++) {
+			arr[i-1] = input[i];
 		}
 		
-		
-		
-		
-		
-		boolean Smallans= checkNumber(arr,  x);
+		boolean Smallans = checkNumber(arr, x);
 		
 		return Smallans;
-}
+    }
 }
