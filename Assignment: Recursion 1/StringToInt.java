@@ -30,13 +30,14 @@ public class solution {
 	       
 	        if (len == 1){
 	            //return input.charAt(0) - '0';
-                   return Character.getNumericValue(input.charAt(0));
+                    return Character.getNumericValue(input.charAt(0));
 	        }
 	        
 	
 	        int smallOutput = convertStringToInt(input.substring(0, len - 1));
-                int lastDigit = input.charAt(len-1) - '0';
-	        
+                // int lastDigit = input.charAt(len-1) - '0';
+	        int lastDigit = Character.getNumericValue(input.charAt(len-1));
+        
 	        return smallOutput *10 + lastDigit;
 	        
 
