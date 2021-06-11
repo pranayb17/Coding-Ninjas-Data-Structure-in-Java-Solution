@@ -21,29 +21,27 @@
 
 public class solution {
 
-	  public static boolean isStringPalindrome(String input) {
+	public static boolean isStringPalindrome(String input) {
+		  
+        if(input == null) {
+            return false;
+        }              
 		
-          
-        if(input==null)         return false;     
-		
-		if(input.length()<=1)   return true;
-		
-		
-		
-
-        char first= input.charAt(0);
-		char last= input.charAt(input.length()-1);
-		
-		if(first!=last) return false;
-          
-          
-		else {
-			
-		return isStringPalindrome(input.substring(1,input.length()-1));
-		
-		}
+	if(input.length() <= 1) {
+             return true;
+        }  
 		
 		
-	}
+        char first = input.charAt(0);
+	char last = input.charAt(input.length()-1);
+		
+	if(first != last) {
+            return false;
+        }else{
+            return isStringPalindrome(input.substring(1,input.length() - 1));
+            
+        }
+          		
+    }
 	
 }
