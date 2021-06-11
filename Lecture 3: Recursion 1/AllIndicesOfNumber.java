@@ -18,27 +18,28 @@
 // 1 3 4
 
 
+
 public class Solution {
     
     
     public static int[] allIndexes(int input[], int x, int si) {
         
         if(si == input.length){
-            int arr[] = new int[0];
-            return arr;
+            int output[] = new int[0];
+            return output;
         }
         
-        int smallArr[] = allIndexes(input, x, si + 1);
+        int smallOutput[] = allIndexes(input, x, si + 1);
         if(input[si] == x){
-            int arr[] = new int[smallArr.length + 1];
-            arr[0] = si;
-            for(int i = 0; i < smallArr.length; i++){
-                arr[i + 1] = smallArr[i];
+            int output[] = new int[smallOutput.length + 1];
+            output[0] = si;
+            for(int i = 0; i < smallOutput.length; i++){
+                output[i + 1] = smallOutput[i];
             }
-            return arr;
+            return output;
                 
         }else{
-            return smallArr;
+            return smallOutput;
         }
         
         
@@ -55,6 +56,3 @@ public class Solution {
     
 }
 	
-
-	
-
