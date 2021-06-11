@@ -20,6 +20,8 @@
 
 
 
+import java.lang.*;
+
 public class solution {
 
 	public static int convertStringToInt(String input){
@@ -27,7 +29,8 @@ public class solution {
 	        int len = input.length();
 	       
 	        if (len == 1){
-	           return input.charAt(0) - '0';
+	            //return input.charAt(0) - '0';
+                   return Character.getNumericValue(input.charAt(0));
 	        }
 	        
 	
@@ -39,5 +42,4 @@ public class solution {
 
 	}
 }
-
 
