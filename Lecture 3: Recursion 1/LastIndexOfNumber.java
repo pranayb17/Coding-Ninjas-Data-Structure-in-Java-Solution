@@ -20,75 +20,105 @@
 // 3
 
 
+
 public class Solution {
-  
-     static int count=-1;
-	
     
-     private static int lastIndex(int input[],int StartIndex , int x) {
-		
-		
-		if(input[StartIndex]==x) {
-			 count=StartIndex ;	
-		}
-		
-                 
+     public static int lastIndex(int input[], int x) {
+         
+         if(input.length == 0){
+             return -1;
+         }
+         
+         int smallArray[] = new int [input.length - 1];
+         for(int i = 1; i < input.length; i++){
+             smallArray[i - 1] = input[i];
+         }
+         
+         int k = lastIndex(smallArray, x);
+         if(k != -1){
+             return k + 1;
+         }else{
+             if(input[0] == x){
+                 return 0;
+             }else{
+                 return -1;
+             }
+         }
+     }
+    
+    
+    
+    
+    
+    //     public static int lastIndex(int input[], int x, int si) {
+        
+//         if(si == input.length){
+//             return -1;
+//         }
+        
+//         int k = lastIndex(input, x, si + 1); 
+        
+//         if(k != -1){
+//             return k;
+//         }else{
             
-		if(StartIndex>=input.length-1) {
+//             if(input[si] == x){
+//                 return si;
+//             }else{
+//                 return -1;
+//             }
+            
+//         }
+		
+		
+// 	}
+    
+//     public static int lastIndex(int input[], int x) {
+		
+// 		return lastIndex(input, x, 0);
+// 	}
+    
+    
+    
+    
+    
+    
+    
+     
+    
+    
+    
+//         static int count = -1;
+
+//         private static int lastIndex(int input[], int StartIndex , int x) {
+		
+		
+// 		if(input[StartIndex] == x) {
+// 			 count = StartIndex ;	
+// 		}
+		
+           
+// 		if(StartIndex >= input.length - 1) {
 			
-			if(input[StartIndex]==x)         return StartIndex; 
-			
-			else                              return count;	
-		}
+// 			if(input[StartIndex] == x) {
+//                  return StartIndex; 
+//             } 
+//             else{
+//                 return count;	  
+//             }	
+			                             
+// 		}
 		
                  
-		int SmallAns= lastIndex(input,StartIndex+1,x);
-		return SmallAns;
+// 		int SmallAns = lastIndex(input, StartIndex + 1, x);
+// 		return SmallAns;
 		
-	}
+// 	}
 	
      
-	public static int lastIndex(int input[], int x) {
+// 	public static int lastIndex(int input[], int x) {
 		
-		return lastIndex(input,0,x);
-	}
+// 		return lastIndex(input, 0, x);
+// 	}
 
 }
-
-//methode 2
-
-
-public class Solution {
-    
-    
-    public static int lastIndex(int input[], int x, int si) {
-        
-        if(si == input.length){
-            return -1;
-        }
-        
-        int k = lastIndex(input, x, si + 1); 
-        
-        if(k != -1){
-            return k;
-        }else{
-            
-            if(input[si] == x){
-                return si;
-            }else{
-                return -1;
-            }
-            
-        }
-		
-		
-	}
-    
-    public static int lastIndex(int input[], int x) {
-		
-		return lastIndex(input, x, 0);
-	}
-    
-    
-}
-
