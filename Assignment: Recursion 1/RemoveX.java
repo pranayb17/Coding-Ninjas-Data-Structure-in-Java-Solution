@@ -21,25 +21,24 @@
 // Sample Output 3:
 
 
+
 public class solution {
 
-	// Return the changed string
 	public static String removeX(String input){
-		// Write your code here
-        int len=input.length();
+    
+		if(input.length() < 1) {
+                    return input;
+               }
+			
 		
-		if(len<1)
-			return input;
-		
-		if(input.charAt(0)=='x')
-			return removeX(input.substring(1, len));
-		
-		else
-			return input.charAt(0)+removeX(input.substring(1, len));
-		
-		
-	}
+		if(input.charAt(0) == 'x') {
+                   return removeX(input.substring(1));
+              }else{
+                  return input.charAt(0) + removeX(input.substring(1));
+            
+             }
+				
+      }
 
 }
-
 
