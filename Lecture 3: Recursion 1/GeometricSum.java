@@ -19,16 +19,19 @@
 // 1.93750
 
 
+
 public class solution {
 
      	public static double findGeometricSum(int k){
 
-    
-		if(k==0) return 1;
+	if(k == 0) {
+            return 1;
+        }
 		
 		 
-		 return findGeometricSum(k-1)+1/Math.pow(2,k);
+        return findGeometricSum(k-1) + 1 / Math.pow(2,k);
 		 
 		 
-	}
+     }
 }
+
