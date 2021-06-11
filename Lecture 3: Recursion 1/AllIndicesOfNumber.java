@@ -17,31 +17,44 @@
 // Sample Output :
 // 1 3 4
 
+
 public class Solution {
-
-	public static int[] allIndexes(int input[], int x) {
-		
-        return allIndexes(input,x,0);
-	}
-    public static int[] allIndexes(int input[], int x,int startIndex){
-	      if(startIndex == input.length){
-	        int[] rv = new int[0];
-	        return rv;
-	      }
-	      int[] roaIndex = allIndexes(input,x,startIndex + 1);
-	      if(input[startIndex] == x){
-	        int[] totalIndex = new int[(roaIndex.length) + 1];
-	        totalIndex[0] = startIndex;
-	        for(int i = 0;i < roaIndex.length;i++){
-	          totalIndex[i+1] = roaIndex[i];
-	        }
-	        return totalIndex;
-	      }
-	      else{
-	        return roaIndex;
-
+    
+    
+    public static int[] allIndexes(int input[], int x, int si) {
+        
+        if(si == input.length){
+            int arr[] = new int[0];
+            return arr;
+        }
+        
+        int smallArr[] = allIndexes(input, x, si + 1);
+        if(input[si] == x){
+            int arr[] = new int[smallArr.length + 1];
+            arr[0] = si;
+            for(int i = 0; i < smallArr.length; i++){
+                arr[i + 1] = smallArr[i];
+            }
+            return arr;
+                
+        }else{
+            return smallArr;
+        }
+        
+        
     }
+    
+    
+    
+       
+    public static int[] allIndexes(int input[], int x) {
+        
+        return allIndexes(input, x, 0);
+    }
+        
+    
 }
-}
+	
+
 	
 
