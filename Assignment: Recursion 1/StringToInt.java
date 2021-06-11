@@ -19,24 +19,25 @@
 
 
 
+
 public class solution {
 
 	public static int convertStringToInt(String input){
     
 	        int len = input.length();
 	       
-	        
-	        if (len==1){
+	        if (len == 1){
 	           return input.charAt(0) - '0';
 	        }
 	        
 	
-	        int smallOutput = convertStringToInt(input.substring(0,len-1));
-            int lastDigit = input.charAt(len-1) - '0';
+	        int smallOutput = convertStringToInt(input.substring(0, len - 1));
+                int lastDigit = input.charAt(len-1) - '0';
 	        
 	        return smallOutput *10 + lastDigit;
 	        
 
-		}
+	}
 }
+
 
