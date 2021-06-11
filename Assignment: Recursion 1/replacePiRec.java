@@ -15,24 +15,20 @@
 // 3.14p
 
 public class solution {
-
-	// Return the changed string
-	public static String replace(String input){
-		
-        int len=input.length();
-		
-		    if (len<2)      
-                
-                return input;                                                // if len is 1 return
-	           
-	        
-		    if(input.startsWith("pi"))
-		    	
-		    	  return "3.14" + replace(input.substring(2,len));
+    
+    public static String replace(String input) {
         
+        if(input.length() < 2){
+            return input;
+        }
         
-        else {                                                              
-	        return  input.charAt(0)+ replace(input.substring(1,len));          // Divide string into zero and remaining
-	        }
-	}
+        if(input.startsWith("pi")){
+            return "3.14" + replace(input.substring(2));
+       
+        }else{
+            return  input.charAt(0) + replace(input.substring(1));
+        }
+        
+    }
+    
 }
