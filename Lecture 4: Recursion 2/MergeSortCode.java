@@ -22,18 +22,16 @@
 
 public class solution {
 
-	
-    
-    public static void mergesort(int input[],int sI,int eI){
+    public static void mergesort(int input[], int sI, int eI){
 		if(sI >= eI) {
-		   return;
+			return;
 		}
 		
-		int mid =(sI + eI) / 2;
+		int mid = (sI + eI) / 2;
 		//for left side
 		mergesort(input, sI, mid);
 		//for right side
-		mergesort(input, mid+1, eI);
+		mergesort(input, mid + 1, eI);
 		
 		merge(input, sI, eI);
 		
@@ -41,10 +39,9 @@ public class solution {
 	
 	private static void merge(int input[],int sI,int eI) {
 		
-		int mid = (sI + eI) / 2;
+		int mid =(sI + eI) / 2;
 		
-		int ans []  =new int [eI-sI+1];
-		
+		int ans []  =new int [eI - sI + 1];
 		int i = sI;
 		int j = mid + 1;
 		int k = 0;
@@ -56,14 +53,12 @@ public class solution {
 				ans[k] = input[i];
 				k++;
 				i++;
-			}
-			
-			
-			else {
-				ans[k] = input[j];
+			}else{
+                                ans[k] = input[j];
 				k++;
-				j++;
-			}
+				j++;   
+                        }
+			
 		}	
 			
 			while(i <= mid) {                   
@@ -72,22 +67,23 @@ public class solution {
 				i++;
 			}
 			
-			
 		       while(j <= eI) {
 			    ans[k] = input[j];
 			    k++;
 			    j++;
-		       }
+		        }
 		   
 		   
 		   for(int index = 0; index < ans.length; index++) {
 			   input[sI + index] = ans[index];
-		   }	
-	}
+		   }
+        
+		}
 		
 	
+	
 	public static void mergeSort(int[] input){
-		mergesort( input, 0, input.length-1);	
+		mergesort(input, 0, input.length-1);
 	}
 	
 	
