@@ -39,9 +39,9 @@ public class solution {
 	
 	private static void merge(int input[],int sI,int eI) {
 		
-		int mid =(sI + eI) / 2;
+		int mid = (sI + eI) / 2;
 		
-		int ans []  =new int [eI - sI + 1];
+		int ans []  = new int [eI - sI + 1];
 		int i = sI;
 		int j = mid + 1;
 		int k = 0;
