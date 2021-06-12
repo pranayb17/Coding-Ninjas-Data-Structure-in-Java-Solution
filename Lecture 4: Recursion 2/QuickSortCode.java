@@ -23,55 +23,62 @@
 // 1 2 3 5 7 
 
 
+
 public class Solution {
-	
-	  public static void quickSort(int[] input) {
-		
-    	
-    	int e =input.length-1;
-    	int s =0;
-            
-    	Sort(input,s , e);
-    		
+    
+    private static int  partition (int[] input, int si, int ei) {
+        int pivot = input[si];
+        int count = 0;
+        for(int i = si + 1; i <= ei; i++){
+            if(input[i] <= pivot){
+                count++;
+            }
+        }
+        
+        int pivotpos = si + count;
+        int temp = input[pivotpos];
+        input[pivotpos] = input[si];
+        input[si] = temp;
+        
+        int i = si;
+        int j = ei;
+        
+        while(i < pivotpos && j > pivotpos){
+            if(input[i] <= pivot){
+                i++;
+            }else if(input[j] > pivot){
+                j--;
+            }else{
+                temp = input[i];
+                input[i] = input[j];
+                input[j] = temp;
+                i++;
+                j--;
+            }
+        }
+        
+        return pivotpos;
+        
     }
     
     
-    private static void Sort(int[] arr,int s,int e) {
+    public static void quickSort(int[] input, int si, int ei) {
+        if(si >= ei){
+            return;
+        }
         
-		 if (s<e){
-	            int pivot = partition(arr, s, e);
-	            Sort(arr, s, (pivot-1));
-	            Sort(arr, (pivot+1), e);
-         }
-	}
-
-	private static int   partition (int[] arr, int s, int e){
-		
-		int pivot=arr[e];           //last element as pivot
-		int pindex=s;               
-		
-		for (int i=s;i<e;i++) {   
-			
-			    if(arr[i]<=pivot) {
-				
-				int temp1=arr[i];
-				arr[i]=arr[pindex];
-				arr[pindex]=temp1;
-				pindex++;	
-			}
-		}
-		
-		    int temp2=arr[e];
-		    arr[e]=arr[pindex];
-		    arr[pindex]=temp2;
-		
-		 return pindex;
+        int pivotpos = partition(input, si, ei);
+        quickSort(input, si, pivotpos - 1);
+        quickSort(input, pivotpos + 1, ei);
+             
+    }
     
-		
-	}
-	
-
-        
-
+    
+    public static void quickSort(int[] input) {
+        quickSort(input, 0, input.length - 1);    
+    }
+    
+    
+    
 	
 }
