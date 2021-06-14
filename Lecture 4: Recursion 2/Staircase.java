@@ -18,21 +18,26 @@
 // 13
 
 
+
 public class Solution {
 	
 
     public static int staircase(int n){
     	
-    	if(n==0 || n==1)  return 1;
+    	if(n == 0 || n == 1)  {
+            return 1;
+        }
     	
-    	else if(n==2)     return 2;
+    	else if(n == 2)  {
+              return 2;
+        } 
     	
     	 int x = staircase(n-1);
          int y = staircase(n-2);
          int z = staircase (n-3);
          
          
-           int count = x+y+z;
+           int count = x + y + z;
            
            return count;
          
@@ -40,6 +45,4 @@ public class Solution {
 	}
 	
 }
-
-
 
